@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate MCQs</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8d7da; /* Light red background for a clean look */
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            border-radius: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .container h1 {
+            color: #dc3545; /* Red color */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .lead {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #6c757d;
+        }
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: left;
+            display: block;
+        }
+        .form-control-file,
+        .form-control {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            background-color: #ffffff;
+            color: #343a40;
+        }
+        .btn-primary {
+            background-color: #dc3545; /* Red color */
+            border-color: #dc3545;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #c82333;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100" style="position: absolute; top: 0; width: 100%;">
+        <a class="navbar-brand" href="#">MCQ Generator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Generate MCQs</h1>
+        <p class="lead">This application generates multiple-choice questions (MCQs) based on the provided text. You can either upload a PDF or TXT file containing the text.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Upload File(s) (PDF or TXT)</label>
+                <input type="file" class="form-control-file" id="file" name="files[]" multiple>
+            </div>
+            <div class="form-group">
+                <label for="num_questions">Number of Questions:</label>
+                <select class="form-control" id="num_questions" name="num_questions">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Generate MCQs</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        © 2024 MCQ Generator Tool
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
